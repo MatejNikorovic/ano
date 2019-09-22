@@ -1,6 +1,6 @@
 # Practical 01
 
-# Hello World in OpenCV
+# Hello World in `OpenCV`
 
 ## Installation on Linux
 
@@ -32,7 +32,7 @@
 - (all kits should be selected) -> `Next >`
 - `Finish`
 
-### Setup project to use OpenCV
+### Setup project to use `OpenCV`
 
 - open `Practical_01.pro` file
 - add lines following lines before `SOURCES` (in case of OpenCV 3.x.x use `opencv` instead of `opencv4`):
@@ -42,7 +42,7 @@ CONFIG += link_pkgconfig
 PKGCONFIG += opencv4
 ```
 
-### Hello World in `Qt Creator`
+### Hello World
 
 - download sample image (e.g. [lenna](https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png))
 - open `main.cpp` file

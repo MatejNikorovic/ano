@@ -13,6 +13,4 @@
 
 ## Practicals
 
-1. [Hello World in OpenCV (19.09.2019)](./resources/practical_01.md)
-
-  * [source code](./src/practical_01)
+1. [Hello World in OpenCV (19.09.2019)](./resources/practical_01.md) [source code](./src/Practical_01)
