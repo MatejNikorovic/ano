@@ -69,8 +69,8 @@ int main(){
 
 - compilation error: `libhdf5.so.103, needed by /usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib/libopencv_hdf.so, not found (try using -rpath or -rpath-link)`
   - you need to install missing library from repository; it's name is `hdf5`
-  - `hdf5` for Arch based systems (look at [Package Search](https://www.archlinux.org/packages/)
-  - `libhdf5-dev` for Debian/Ubuntu based systems (look at [Ubuntu Packages Seatch](https://packages.ubuntu.com/)
+  - `hdf5` for Arch based systems (look at [Package Search](https://www.archlinux.org/packages/))
+  - `libhdf5-dev` for Debian/Ubuntu based systems (look at [Ubuntu Packages Seatch](https://packages.ubuntu.com/))
 
 ## Installation on Windows 10 (TBD)
 
