@@ -8,7 +8,7 @@
 
 - Arch based systems (OpenCV version: 4.1.1 - latest):
 
-`$ sudo pacman -S opencv qtcreator `
+`$ sudo pacman -S opencv qtcreator hdf5 vtk`
 
 - Debian/Ubuntu based systems (OpenCV version 3.2.0 - old, but may be sufficient):
 
@@ -25,11 +25,11 @@
 ### Create the first project
 
 - run `qtcreator`
-- `File` menu -> `New File or Project...`
-- `Non-Qt Project` -> `Plain C++ Application` -> `✓ Choose...`
-- change name (e.g. `Practical_01`) and correct location -> `Next >`
-- (qmake) -> `Next >`
-- (all kits should be selected) -> `Next >`
+- `File` menu → `New File or Project...`
+- `Non-Qt Project` → `Plain C++ Application` → `✓ Choose...`
+- change name (e.g. `Practical_01`) and correct location → `Next >`
+- (qmake) → `Next >`
+- (all kits should be selected) → `Next >`
 - `Finish`
 
 ### Setup project to use `OpenCV`
@@ -42,7 +42,7 @@ CONFIG += link_pkgconfig
 PKGCONFIG += opencv4
 ```
 
-### Hello World
+### Hello World in QT Creator
 
 - download sample image (e.g. [lenna](https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png))
 - open `main.cpp` file
@@ -72,22 +72,82 @@ int main(){
   - `hdf5` for Arch based systems (look at [Package Search](https://www.archlinux.org/packages/))
   - `libhdf5-dev` for Debian/Ubuntu based systems (look at [Ubuntu Packages Seatch](https://packages.ubuntu.com/))
 
-## Installation on Windows 10 (TBD)
+## Installation on Windows 10
 
-### Install `OpenCV` library and `Visual Studio IDE`
+### Install `OpenCV` library and `Visual Studio IDE 2017`
 
 - Install [Visual Studio IDE](https://visualstudio.microsoft.com/) with C++ support
+
+
 - go to [OpenCV page](https://opencv.org/releases/)
-- select proper version and click on `Windows` button
-- run or extract the downloaded file ideally to drive root (e.g. `C:\`) - all files will be extracted into `C:\opencv` directory
+  - select 4.1.1 version and click on `Windows` button
+  - run or extract the downloaded file ideally to drive root (e.g. `C:\`) - all files will be extracted into `C:\opencv` directory
 
 ### Set the environment
 
-- in Search, search for `System` (Control Panel)
-- `Advanced system settings` link
-- `Advanced` tab -> `Environment Variables` button
-- `System variables` section -> `New...` button
+- Windows menu → type `environment` to search for `Edit environment variables`
+- button `Environment Variables...`
+- section `System variables` → button `New...`
 - create variable `OPENCV_DIR` with value `C:\opencv`
 - create variable `OPENCV_VER` with value `411`
 
-### Create the first project (TBD)
+### Create the first project
+
+- open Visual Studio
+- menu `File` → `New` → `Project...`
+- `Visual C++` → `Empty Project` → type proper name → button `OK`
+
+### Remove x86 configuration
+
+- combo box with value `x86` → `Configuration Manager...`
+- Active solution platform: combo box with value `x86` → `<Edit...>`
+- select `x86` → button `Remove` → button `Yes` → button `Close`
+- button `Close`
+
+### Set project paths
+
+- window `Solution Explorer` → select the project (not solution) → right click → Properties
+- Configuration: combo box `Active(Debug)` → `All Configurations`
+  - `VC++ Directories` → `Include Directories` → `⌄` → `<Edit...>`
+    - type into text box: `$(OPENCV_DIR)\build\include` → button `OK`
+  - expand `Linker` → `General` → `Additional Library Directories` → `⌄` → `<Edit...>`
+    - type into text box: `$(OPENCV_DIR)\build\x64\vc15\lib` → button `OK`
+  - `Debugging` → `Environment` → `⌄` → `<Edit...>`
+    - type into text box: `PATH=$(OPEN_CV)\build\x64\vc15\bin` → button `OK`
+  - button `Apply`
+
+- Configuration: combo box `All Configurations` → `Debug`
+  - expand `Linker` → `Input` → `Additional Dependencies` → `⌄` → `<Edit...>`
+    - type into text box: `opencv_world$(OPENCV_VER)d.lib → button `OK`
+  - button `Apply`
+
+- Configuration: combo box `Debug` → `Release`
+  - expand `Linker` → `Input` → `Additional Dependencies` → `⌄` → `<Edit...>`
+    - type into text box: `opencv_world$(OPENCV_VER).lib → button `OK`
+  - button `Apply`
+
+- button `OK`
+
+### Hello World in Visual Studio
+
+- download sample image (e.g. [lenna](https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png))
+- window `Solution Explorer` → `Source Files` → right click → `Add` → `New Item...`
+- `Visual C++` → `C++ File (.cpp)` → change name e.g. `main.cpp` → button `Add`
+- paste to it following lines:
+
+```
+#include <opencv2/core.hpp>      // it imports image representation structure
+#include <opencv2/imgcodecs.hpp> // it imports image loading from file 
+#include <opencv2/highgui.hpp>   // it imports simple GUI for showing an image
+
+using namespace cv; // all OpenCV structures/functions are in `cv` namespace (package) 
+
+int main(){
+    Mat image = imread("../Lenna.png"); // load image from file
+    imshow("image", image);             // show image in simple GUI
+    waitKey();                          // waiting for key press (we want to see something)
+    return 0;
+}
+```
+
+- CTRL+F5 to run the project
