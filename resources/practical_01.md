@@ -8,7 +8,7 @@
 
 - Arch based systems (OpenCV version: 4.1.1 - latest):
 
-`$ sudo pacman -S opencv qtcreator `
+`$ sudo pacman -S opencv qtcreator hdf5 vtk`
 
 - Debian/Ubuntu based systems (OpenCV version 3.2.0 - old, but may be sufficient):
 
