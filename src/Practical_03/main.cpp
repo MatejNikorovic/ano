@@ -58,28 +58,24 @@ void pepperAndSalt(Mat image, int count){
 int main(){
     Mat image = imread("../Lenna.png");
 
-    Mat whiteNoise = Mat(image.size(), CV_8UC3, Scalar::all(0));
-    randu(whiteNoise, 0, 32);
-    // drawHistogram(whiteNoise, 3);
-
-    Mat gaussNoise = Mat(image.size(), CV_8UC3, Scalar::all(0));
-    randn(gaussNoise, 16, 8);
-    // drawHistogram(gaussNoise, 3);
-
     imshow("uniform", image);
     moveWindow("uniform", 0, 0);
     imshow("normal", image);
     moveWindow("normal", 600, 0);
     imshow("pepper", image);
     moveWindow("pepper", 1200, 0);
-
     waitKey();
 
+    Mat whiteNoise = Mat(image.size(), CV_8UC3, Scalar::all(0));
+    randu(whiteNoise, 0, 32);
     Mat noiseImage1 = image + whiteNoise - 16;
+    Mat gaussNoise = Mat(image.size(), CV_8UC3, Scalar::all(0));
+    randn(gaussNoise, 16, 8);
     Mat noiseImage2 = image + gaussNoise - 16;
     Mat noiseImage3;
     image.copyTo(noiseImage3);
     pepperAndSalt(noiseImage3, 10000);
+
     imshow("uniform", noiseImage1);
     imshow("normal", noiseImage2);
     imshow("pepper", noiseImage3);
@@ -93,6 +89,7 @@ int main(){
     blur(noiseImage1, result1, Size(3, 3));
     blur(noiseImage2, result2, Size(3, 3));
     medianBlur(noiseImage3, result3, 3);
+
     imshow("uniform", result1);
     imshow("normal", result2);
     imshow("pepper", result3);
