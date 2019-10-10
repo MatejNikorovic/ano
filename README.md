@@ -15,3 +15,4 @@
 
 1. [Hello World in OpenCV (19.09.2019)](./resources/practical_01.md) [source code](./src/Practical_01)
 2. Image direct data access, single pixel transforms, histogram (08.10.2019) [source code](./src/Practical_02)
+3. Noise types, noise addition, bluring the noise (10.10.2019) [source code](./src/Practical_03)
