@@ -16,4 +16,4 @@
 1. [Hello World in OpenCV](./resources/practical_01.md) (19.09.2019) [source code](./src/Practical_01/main.cpp)
 2. Image direct data access, single pixel transforms, histogram (08.10.2019) [source code](./src/Practical_02/main.cpp)
 3. Noise types, noise addition, bluring the noise (10.10.2019) [source code](./src/Practical_03/main.cpp)
-4. [Fourier transform, mouse events](./resources/practical_04.md) (17.10.2019) source code
+4. [Fourier transform, mouse events](./resources/practical_04.md) (17.10.2019) [source code](./src/Practical_04/main.cpp)
