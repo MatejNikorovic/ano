@@ -27,7 +27,7 @@ Mat complexToLogScale(Mat& complex){
     distances += Scalar::all(1);
     log(distances, distances);
     normalize(distances, distances, 1, 0, NORM_INF);
-	return distances;
+    return distances;
 }
 ```
 
