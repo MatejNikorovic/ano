@@ -113,7 +113,7 @@ int main(){
   - expand `Linker` → `General` → `Additional Library Directories` → `⌄` → `<Edit...>`
     - type into text box: `$(OPENCV_DIR)\build\x64\vc15\lib` → button `OK`
   - `Debugging` → `Environment` → `⌄` → `<Edit...>`
-    - type into text box: `PATH=$(OPEN_CV)\build\x64\vc15\bin` → button `OK`
+    - type into text box: `PATH=$(OPENCV_DIR)\build\x64\vc15\bin` → button `OK`
   - button `Apply`
 
 - Configuration: combo box `All Configurations` → `Debug`
