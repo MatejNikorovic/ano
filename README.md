@@ -18,3 +18,4 @@
 3. Noise types, noise addition, bluring the noise (10.10.2019) [source code](./src/Practical_03/main.cpp)
 4. [Fourier transform, mouse events](./resources/practical_04.md) (17.10.2019) [source code](./src/Practical_04/main.cpp)
 5. Convolution, thresholding (24.10.2019) [source code](./src/Practical_05/main.cpp)
+6. Theoretical test, searching for contours (31.10.2019) [source code](./src/Practical_06/main.cpp)
