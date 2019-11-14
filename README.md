@@ -20,3 +20,4 @@
 5. Convolution, thresholding (24.10.2019) [source code](./src/Practical_05/main.cpp)
 6. Theoretical test, searching for contours (31.10.2019) [source code](./src/Practical_06/main.cpp)
 7. Graph cut segmentation, masking, Hough circles transform (05.11.2019) [source code](./src/Practical_07/main.cpp)
+8. Mathematical morphology (14.11.2019) [source code](./src/Practical_08/main.cpp)
