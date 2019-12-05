@@ -21,3 +21,5 @@
 6. Theoretical test, searching for contours (31.10.2019) [source code](./src/Practical_06/main.cpp)
 7. Graph cut segmentation, masking, Hough circles transform (05.11.2019) [source code](./src/Practical_07/main.cpp)
 8. Mathematical morphology (14.11.2019) [source code](./src/Practical_08/main.cpp)
+9. Descriptors, [recognition](./resources/Rozpoznavanie.pptx) (05.12.2019) [source code](./src/Practical_09/main.cpp)
+10. Key points, RANSAC, template matching (05.12.2019) [source code](./src/Practical_10/main.cpp)
