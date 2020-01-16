@@ -1,6 +1,6 @@
 # Image Analysis
 
-- theoretical classes: on Tuesdays at 8.55 in SJ0L22 (HVRL)
+- [theoretical classes](./resources/PV_2016.pdf): on Tuesdays at 8.55 in SJ0L22 (HVRL)
 - practical classes: on Thursdays at 14.25 in SJ0L22 (HVRL)
 
 ## Evaluation
